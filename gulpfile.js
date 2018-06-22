@@ -40,8 +40,14 @@ gulp.task('js-compress', function () {
 gulp.task('html-compress', function () {
     return gulp.src('index.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: true }))
-        .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: true }))
+        .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: false, transform: function (filePath) {
+                const path = filePath.split('/');
+                return `<script src="./js/${path[path.length - 1]}"></script>`;
+            } }))
+        .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: false, transform: function (filePath) {
+                const path = filePath.split('/');
+                return `<link rel="stylesheet" href="./css/${path[path.length - 1]}">`;
+            }  }))
         .pipe(gulp.dest('docs'));
 });
 
@@ -54,6 +60,5 @@ gulp.task('browser-sync', function () {
         server: {
             baseDir: 'docs/'
         }
-        // browser: 'chrome'
     });
 });
