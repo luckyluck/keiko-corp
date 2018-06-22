@@ -6,9 +6,17 @@
   "author": "Alexandr Ketov <ketov.alex.v@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "http-server ./"
+    "build": "gulp build",
+    "start": "gulp browser-sync"
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-uglify-es": "^1.0.4",
+    "run-sequence": "^2.2.1"
   }
 }
