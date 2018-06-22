@@ -6,6 +6,7 @@ const uglify = require('gulp-uglify-es').default;
 const htmlmin = require('gulp-htmlmin');
 const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
+const inject = require('gulp-inject');
 
 gulp.task('images', function () {
     return gulp.src(['img/*.+(svg|png|gif|jpeg|jpg)'])
@@ -39,6 +40,8 @@ gulp.task('js-compress', function () {
 gulp.task('html-compress', function () {
     return gulp.src('index.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: false }))
+        .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: false }))
         .pipe(gulp.dest('docs'));
 });
 
