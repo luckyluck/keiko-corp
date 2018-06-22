@@ -17,7 +17,7 @@ gulp.task('css-compress', function () {
     return gulp.src('css/*.css')
         .pipe(concatCss('bundle.css'))
         .pipe(cleanCSS({ compatibility: 'ie11' }))
-        .pipe(gulp.dest('docs/'));
+        .pipe(gulp.dest('docs/css/'));
 });
 
 gulp.task('js-compress', function () {
@@ -34,14 +34,14 @@ gulp.task('js-compress', function () {
     ])
         .pipe(uglify())
         .pipe(concatJs('bundle.js'))
-        .pipe(gulp.dest('docs/'));
+        .pipe(gulp.dest('docs/js/'));
 });
 
 gulp.task('html-compress', function () {
     return gulp.src('index.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: false }))
-        .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: false }))
+        .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: true }))
+        .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: true }))
         .pipe(gulp.dest('docs'));
 });
 
