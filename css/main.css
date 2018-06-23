@@ -197,16 +197,31 @@ a.app_store_btn {
     margin-bottom: 3px;
 }
 
+.play_icon,
+.iphone_icon,
+.android_icon,
+.close_video,
+#mc_submit i.icon,
+.about .features_list ul li:before {
+    background: url('../img/icons-sprite.png') no-repeat;
+}
+
 .play_icon {
-    background: url('../img/play.png') no-repeat;
+    width: 14px;
+    height: 16px;
+    background-position: -27px -143px;
 }
 
 .iphone_icon {
-    background: url('../img/iphone_app.png') no-repeat;
+    width: 12px;
+    height: 16px;
+    background-position: -181px -63px;
 }
 
 .android_icon {
-    background: url('../img/android_app.png') no-repeat;
+    width: 14px;
+    height: 16px;
+    background-position: -5px -5px;
 }
 
 a.app_store_btn:hover,
@@ -216,15 +231,15 @@ a.app_store_btn:focus {
 }
 
 a.app_store_btn:hover .play_icon {
-    background: url('../img/play_hover.png') no-repeat;
+    background-position: -51px -143px;
 }
 
 a.app_store_btn:hover .iphone_icon {
-    background: url('../img/iphone_app_hover.png') no-repeat;
+    background-position: -5px -143px;
 }
 
 a.app_store_btn:hover .android_icon {
-    background: url('../img/android_app_hover.png') no-repeat;
+    background-position: -29px -5px;
 }
 
 a.app_link {
@@ -275,7 +290,7 @@ a.app_link {
     height: 38px;
     top: 50px;
     right: 50px;
-    background: url('../img/close_video.png') no-repeat;
+    background-position: -96px -5px;
     z-index: 9999;
 }
 
@@ -351,38 +366,52 @@ a.app_link {
 }
 
 .about .features_list ul li {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
     color: #6c6c6c;
     font-weight: 600;
     font-size: 16px;
     line-height: 44px;
-    text-indent: 25px;
-
+    text-indent: 47px;
     transition: all .2s linear;
     -o-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -webkit-transition: all .2s linear;
 }
 
-.about .features_list ul li.camera_icon {
-    background: url('../img/icon1.png') no-repeat 0 15px;
+.about .features_list ul li:before {
+    display: block;
+    width: 22px;
+    content: '';
+    position: absolute;
+    left: 0;
 }
 
-.about .features_list ul li.video_icon {
-    background: url('../img/icon2.png') no-repeat 0 15px;
+.about .features_list ul li.camera_icon:before {
+    height: 16px;
+    background-position: -144px -5px;
 }
 
-.about .features_list ul li.eye_icon {
-    background: url('../img/icon3.png') no-repeat 0 14px;
+.about .features_list ul li.video_icon:before {
+    height: 14px;
+    background-position: -93px -135px;
 }
 
-.about .features_list ul li.pic_icon {
-    background: url('../img/icon4.png') no-repeat 0 14px;
+.about .features_list ul li.eye_icon:before {
+    height: 17px;
+    background-position: -125px -135px;
 }
 
-.about .features_list ul li.loc_icon {
-    background: url('../img/icon5.png') no-repeat 3px 13px;
+.about .features_list ul li.pic_icon:before {
+    height: 19px;
+    background-position: -176px -5px;
+}
+
+.about .features_list ul li.loc_icon:before {
+    width: 17px;
+    height: 19px;
+    background-position: -181px -34px;
 }
 
 .about .features_list ul li span {
@@ -581,7 +610,7 @@ a.app_link {
 }
 
 #mc_submit i.icon {
-    background: url('../img/sub_icon.png') no-repeat;
+    background-position: -157px -143px;
 }
 
 #mc_submit i.loading {
