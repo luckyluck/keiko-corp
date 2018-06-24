@@ -315,6 +315,35 @@ a.app_store_btn {
     background-position: -5px -5px;
 }
 
+.google-logo,
+.facebook-logo,
+.pay-pal-logo,
+.yahoo-logo {
+    background: url('../img/logos-sprite.png') no-repeat;
+    display: block;
+    height: 45px;
+}
+
+.google-logo {
+    width: 130px;
+    background-position: -5px -60px;
+}
+
+.facebook-logo {
+    width: 132px;
+    background-position: -5px -5px;
+}
+
+.pay-pal-logo {
+    width: 131px;
+    background-position: -5px -115px;
+}
+
+.yahoo-logo {
+    width: 131px;
+    background-position: -147px -5px;
+}
+
 a.app_store_btn:hover,
 a.app_store_btn:focus {
     border-color: #41c27d;
