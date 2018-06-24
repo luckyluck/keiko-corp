@@ -42,11 +42,11 @@ gulp.task('html-compress', function () {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(inject(gulp.src('./docs/**/*.js', { read: false }), { relative: false, transform: function (filePath) {
                 const path = filePath.split('/');
-                return `<script src="./js/${path[path.length - 1]}"></script>`;
+                return `<script type="text/javascript" src="./js/${path[path.length - 1]}" async></script>`;
             } }))
         .pipe(inject(gulp.src('./docs/**/*.css', { read: false }), { relative: false, transform: function (filePath) {
                 const path = filePath.split('/');
-                return `<link rel="stylesheet" href="./css/${path[path.length - 1]}">`;
+                return `<link rel="preload" href="./css/${path[path.length - 1]}" as="style" onload="this.rel='stylesheet'">`;
             }  }))
         .pipe(gulp.dest('docs'));
 });

@@ -9,10 +9,43 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="preload" as="style" onload="this.rel='stylesheet'">
     <!-- inject:css -->
     <!-- endinject -->
+    <style>
+        .page-content {
+            display: none;
+        }
+        .lds-circle {
+            position: absolute;
+            top: calc(50% - 25px);
+            left: calc(50% - 25px);
+            display: inline-block;
+            width: 51px;
+            height: 51px;
+            margin: 6px;
+            border-radius: 50%;
+            background: #fff;
+            animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        }
+        @keyframes lds-circle {
+            0%, 100% {
+                animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+            }
+            0% {
+                transform: rotateY(0deg);
+            }
+            50% {
+                transform: rotateY(1800deg);
+                animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+            }
+            100% {
+                transform: rotateY(3600deg);
+            }
+        }
+    </style>
 </head>
 <body>
+<div class="lds-circle"></div>
 <!--  Header Section  -->
-<header>
+<header class="page-content">
     <div class="container">
         <div class="logo pull-left animated wow fadeInLeft">
             <img class="logo-image" src="img/logo.png" alt="">
@@ -42,7 +75,7 @@
 </header>
 <!--  End Header Section  -->
 <!--  Hero Section  -->
-<section class="hero" id="hero">
+<section class="hero page-content" id="hero">
     <div class="container">
         <div class="caption">
             <h1 class="text-uppercase  animated wow fadeInLeft">Creators of Robofriends and SmartBrain</h1>
@@ -62,7 +95,7 @@
 </section>
 <!--  End Hero Section  -->
 <!--  Featured On Section  -->
-<section class="featured_on">
+<section class="featured_on page-content">
     <div class="container">
         <ul class="list-unstyled text-center clearfix">
             <li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown">
@@ -82,7 +115,7 @@
 </section>
 <!--  End Featured On Section  -->
 <!--  About Section  -->
-<section class="about" id="about">
+<section class="about page-content" id="about">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center animated wow fadeInLeft">
@@ -129,7 +162,7 @@
 </section>
 <!--  End About Section  -->
 <!--  App Features Section  -->
-<section class="app_features" id="app_features">
+<section class="app_features page-content" id="app_features">
     <div class="container">
         <div class="row text-center">
             <div class="col-sm-4 col-md-4 details animated wow fadeInDown" data-wow-delay="0s">
@@ -175,7 +208,7 @@
 </section>
 <!--  And App Features Section  -->
 <!--  Testimonials Section  -->
-<section class="testimonials animated wow fadeIn" id="testimonials" data-wow-duration="2s">
+<section class="testimonials animated wow fadeIn page-content" id="testimonials" data-wow-duration="2s">
     <div class="container">
         <div class="testimonials_list">
             <ul class="list-unstyled text-center slides clearfix" id="tslider">
@@ -219,7 +252,7 @@
 </section>
 <!--  End Testimonials Section  -->
 <!--  Email Subscription Section  -->
-<section class="sub_box">
+<section class="sub_box page-content">
     <p class="cta_text animated wow fadeInDown">We're hiring. Join Our company!</p>
     <form action="#" metohd="post" class="animated wow fadeIn" data-wow-duration="2s" id="submit_form">
         <input type="email" id="mc-email" placeholder="Enter your email"/>
@@ -232,7 +265,7 @@
 </section>
 <!--  End Email Subscription Section  -->
 <!--  Footer Section  -->
-<footer>
+<footer class="page-content">
     <ul class="list-unstyled list-inline app_platform">
         <li class="animated wow fadeInDown" data-wow-delay="0s">
             <a href=""><i class="android-logo"></i></a>
@@ -247,6 +280,14 @@
     <p class="copyright animated wow fadeIn" data-wow-duration="2s"><strong>Pixelhint</strong>
 </footer>
 <!--  End Footer Section  -->
+<script>
+    window.onload = function () {
+        document.querySelector('.lds-circle').remove();
+        document.querySelectorAll('.page-content').forEach(element => {
+            element.style.display = 'block';
+        });
+    };
+</script>
 <!-- inject:js -->
 <!-- endinject -->
 </body>
