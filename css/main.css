@@ -202,20 +202,111 @@ a.app_store_btn {
 .android_icon,
 .close_video,
 #mc_submit i.icon,
-.about .features_list ul li:before {
+.about .features_list ul li:before,
+.google-share,
+.facebook-share,
+.twitter-share,
+.f_icon1,
+.f_icon2,
+.f_icon3,
+.f_icon4,
+.f_icon5,
+.f_icon6,
+.android-logo,
+.ios-logo,
+.windows-logo {
     background: url('../img/icons-sprite.png') no-repeat;
+}
+
+.android-logo {
+    display: inline-block;
+    width: 33px;
+    height: 38px;
+    background-position: -53px -5px;
+}
+
+.ios-logo {
+    display: inline-block;
+    width: 29px;
+    height: 38px;
+    background-position: -186px -5px;
+}
+
+.windows-logo {
+    display: inline-block;
+    width: 40px;
+    height: 38px;
+    background-position: -144px -158px;
+}
+
+.f_icon1,
+.f_icon2,
+.f_icon3,
+.f_icon4,
+.f_icon5,
+.f_icon6 {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.f_icon1 {
+    background-position: -144px -5px;
+}
+
+.f_icon2 {
+    width: 36px;
+    background-position: -5px -53px;
+}
+
+.f_icon3 {
+    width: 36px;
+    background-position: -51px -53px;
+}
+
+.f_icon4 {
+    background-position: -144px -47px;
+}
+
+.f_icon5 {
+    background-position: -97px -89px;
+}
+
+.f_icon6 {
+    width: 36px;
+    background-position: -139px -89px;
+}
+
+.google-share,
+.facebook-share,
+.twitter-share {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.google-share {
+    background-position: -45px -131px;
+}
+
+.twitter-share {
+    background-position: -185px -105px;
+}
+
+.facebook-share {
+    background-position: -5px -131px;
 }
 
 .play_icon {
     width: 14px;
     height: 16px;
-    background-position: -27px -143px;
+    background-position: -186px -53px;
 }
 
 .iphone_icon {
     width: 12px;
     height: 16px;
-    background-position: -181px -63px;
+    background-position: -97px -53px;
 }
 
 .android_icon {
@@ -231,11 +322,11 @@ a.app_store_btn:focus {
 }
 
 a.app_store_btn:hover .play_icon {
-    background-position: -51px -143px;
+    background-position: -186px -79px;
 }
 
 a.app_store_btn:hover .iphone_icon {
-    background-position: -5px -143px;
+    background-position: -119px -53px;
 }
 
 a.app_store_btn:hover .android_icon {
@@ -390,28 +481,29 @@ a.app_link {
 
 .about .features_list ul li.camera_icon:before {
     height: 16px;
-    background-position: -144px -5px;
+    background-position: -85px -131px;
 }
 
 .about .features_list ul li.video_icon:before {
     height: 14px;
-    background-position: -93px -135px;
+    background-position: -117px -131px;
 }
 
 .about .features_list ul li.eye_icon:before {
     height: 17px;
-    background-position: -125px -135px;
+    background-position: -149px -131px;
 }
 
 .about .features_list ul li.pic_icon:before {
     height: 19px;
-    background-position: -176px -5px;
+    background-position: -85px -158px;
 }
 
 .about .features_list ul li.loc_icon:before {
     width: 17px;
     height: 19px;
-    background-position: -181px -34px;
+    background-position: -117px -158px;
+    left: 3px;
 }
 
 .about .features_list ul li span {
@@ -610,7 +702,7 @@ a.app_link {
 }
 
 #mc_submit i.icon {
-    background-position: -157px -143px;
+    background-position: -5px -105px;
 }
 
 #mc_submit i.loading {
